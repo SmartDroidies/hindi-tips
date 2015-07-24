@@ -1,0 +1,85 @@
+/* app css stylesheet */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 40px;
+}
+
+html, body {
+    
+}
+
+/*
+body > .content, body > .menu, body > .setting {
+  padding: 55px 0 0 0;
+}
+*/
+
+body > .content {
+  padding: 55px 0 0 0;
+}
+
+body > .content {
+  overflow: scroll;
+  height: 100%;
+}
+
+.navbar-hindi {
+	height: 54px;
+}
+
+.main-header {
+  padding: 5px;
+} 
+
+.main-title {
+	padding: 2px;
+	margin: 0px;
+	font-size: 24px;
+	text-align: center;	
+}	
+
+/* Category Menu Styling */
+.ctgry {
+	position: relative;
+	margin: 2px;
+	padding: 0px;
+	height : 68px;
+}
+
+.ctgryIcon {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	margin: 3px;
+}
+
+.right-icon {
+	right : 5px;
+}
+
+.ctgryDesc {
+	min-height : 70px;
+} 
+
+.ctgryDesc h3 {
+	font-size : 24px;
+	font-weight : bold;
+	margin-top: 5px;
+	padding-top: 10px;
+}
+
+.right-content  {
+	margin-left: 90px;
+	min-height: 60px;
+}
+
+.left-content  {
+	margin-right: 90px;
+	min-height: 60px;
+	text-align: right;
+}
