@@ -83,3 +83,34 @@ body > .content {
 	min-height: 60px;
 	text-align: right;
 }
+
+.article-list-item {
+	margin : 3px;
+	background-color: transparent;
+}
+
+.article-list-item a {
+	background-color: transparent;
+}
+
+.article-listitem-content {
+	display: table-cell;
+    width: 90%;
+	vertical-align: middle;	
+}
+
+.article-listitem-icon {
+	display: table-cell;
+    width: 100px;
+	margin-left : 10px;
+	height : 70px;
+}
+
+.article-icon-img {
+	width: 100px;
+	height : 70px;
+}
+
+.list-group-item {
+  padding : 5px;
+}

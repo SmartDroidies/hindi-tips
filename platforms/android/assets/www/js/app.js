@@ -1,14 +1,13 @@
 'use strict';
 /* App Module */
 
-/* var tamilPaarvaiApp = angular.module('tamilPaarvaiApp', ['ngRoute', 'ngSanitize', 'pascalprecht.translate', 'tamilPaarvaiControllers', 'parvaiServices', 'parvaiFilters', 'underscore', 'cacheService']); */
-var hindiTipsApp = angular.module('hindiTipsApp', ['ngRoute', 'ngSanitize', 'pascalprecht.translate', 'underscore']); 
+var hindiTipsApp = angular.module('hindiTipsApp', ['ngRoute', 'ngSanitize', 'pascalprecht.translate', 'underscore', 'hindiTipsControllers', 'hindiTipsServices', 'hindiTipsFilters', 'underscore', 'cacheService']); 
 
 hindiTipsApp.config(['$routeProvider', 
 	function ($routeProvider) {
 		$routeProvider.when('/home', {
 			templateUrl : 'partials/home.html',
-			/* controller : 'HomeCtrl' */
+			controller : 'HomeCtrl'
 		}).when('/articles/:cat', {
 	        templateUrl : 'partials/articles.html',
 	        controller : 'ArticlesCtrl'
@@ -38,6 +37,3 @@ hindiTipsApp.config(function ($translateProvider) {
         });
         $translateProvider.preferredLanguage('hi');
       });
-
-
-/* Cooking -  - 4 | home-remedy -  3 | fitness -  6 | beauty -  2 | health -  1 | house-keeping -  */
