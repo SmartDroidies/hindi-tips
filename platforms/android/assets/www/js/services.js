@@ -86,7 +86,7 @@ hindiTipsServices.factory ('StorageService', function () {
 
 	//Collect all articles 
 	storageFactory.collectArticles = function() {
-		console.log('Collecting Articles from Local Storage');
+		//console.log('Collecting Articles from Local Storage');
 		var data =  window.localStorage.getItem(keyArticles);
 		return JSON.parse(data);
 	}
