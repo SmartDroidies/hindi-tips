@@ -80,28 +80,10 @@ function onNotification(e) {
 		//console.log(e.payload.message);
 		$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
 		$("#app-status-ul").append('<li>MESSAGE -> URL: ' + e.payload.url + '</li>');
-		//downloadLatestTips();
 
-		//var controllerScope = angular.element($('body')).scope();
-		//controllerScope.$apply(function() {
-			//console.log('Take to Tip => ' + e.payload.id);
-			var landingPath = "#/article/" + e.payload.id;
-			//setInterval(function () {window.location = landingPath}, 6000);
-			window.location = landingPath;
-			//this.tipId = e.payload.id;
-		//});		
-		//angular.element($('body')).scope().loadTip(e.payload.id);
-		//$location.path(landingPath);
-		//navigator.notification.alert(e.payload.message, alertDismissed, '\u0baa\u0bc1\u0ba4\u0bbf\u0baf //\u0ba4\u0bc1\u0bb3\u0bbf\u0b95\u0bb3\u0bcd', 'ok');
-		// Android / BlackBerry WebWorks (OS 5.0 and higher) / iOS / Tizen
-		function alertDismissed() {
-			// do something
-		}
+		var landingPath = "#/article/" + e.payload.id;
+		window.location = landingPath;
 		
-		//android only
-		//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
-		//amazon-fireos only
-		//$("#app-status-ul").append('<li>MESSAGE -> TIMESTAMP: ' + e.payload.timeStamp + '</li>');
 		break;
 
 	case 'error':

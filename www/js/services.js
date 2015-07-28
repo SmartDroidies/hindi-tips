@@ -17,7 +17,7 @@ hindiTipsServices.factory ('StorageService', function () {
 		
 		//FIXME - Check if the data check has been done already
 		jQuery.getJSON(fileURL, function (data) {
-			console.log("Loading Articles from FileSystem");
+			//console.log("Loading Articles from FileSystem");
 		}).done(function(data) {
 			if(!version || data.version > version) {
 				console.log("Updating Local Storage");
@@ -37,9 +37,9 @@ hindiTipsServices.factory ('StorageService', function () {
 		if(lastSyncTime) {
 			uri = encodeURI("http://hindi.tips2stayhealthy.com/?json=y&ts=" + lastSyncTime);
 		} 
-		console.log("Download URL : " + uri);
+		//console.log("Download URL : " + uri);
 		jQuery.getJSON(uri, function (data) {
-			console.log("Loading Latest Articles from Server");
+			//console.log("Loading Latest Articles from Server");
 		}).done(function(data) {
 			//console.log("Fresh Data " + JSON.stringify(data));
 			self.syncLocalStorage(data);
@@ -54,8 +54,8 @@ hindiTipsServices.factory ('StorageService', function () {
 	storageFactory.syncLocalStorage = function(remoteJSON) {	
 		var localArticles =  window.localStorage.getItem(keyArticles);
 		var localJSON = JSON.parse(localArticles);
-		console.log("Modified Array Size : " + _.size(remoteJSON));		
-		console.log("Local Array Size : " + _.size(localJSON));		
+		//console.log("Modified Array Size : " + _.size(remoteJSON));		
+		//console.log("Local Array Size : " + _.size(localJSON));		
 		if(_.size(remoteJSON) >  0) {
 			$.each(remoteJSON.articles, function(key, item) {
 				var newArticle = true;
@@ -86,7 +86,7 @@ hindiTipsServices.factory ('StorageService', function () {
 
 	//Collect all articles 
 	storageFactory.collectArticles = function() {
-		console.log('Collecting Articles from Local Storage');
+		//console.log('Collecting Articles from Local Storage');
 		var data =  window.localStorage.getItem(keyArticles);
 		return JSON.parse(data);
 	}

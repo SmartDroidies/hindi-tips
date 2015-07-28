@@ -55,16 +55,17 @@
         <div ng-view class="content">
         </div>
 
-        <div id="adFooter">
-
+        
+        <div id="footer" class="adspace">
+          <div class="container">
             <div id="smaatoad" style="padding: 0px"></div>
             <script type="text/javascript" src="http://soma.smaato.net/oapi/js/smaatoAdTag.js"></script>
             <script>
                 function callBackForSmaato(status){
                     if(status == "SUCCESS"){
-                        console.log('callBack is being called with status : ' + status);
+                        //console.log('callBack is being called with status : ' + status);
                     } else if (status == "ERROR"){
-                        console.log('callBack is being called with status : ' + status);
+                        //console.log('callBack is being called with status : ' + status);
                     }
                 }; 
                 SomaJS.loadAd({
@@ -74,8 +75,8 @@
                     dimension: "xxlarge"
                 },callBackForSmaato);
             </script>
-            
-        </div>    
+          </div>
+        </div>
 
         <script src="js/angular/angular.js"></script>
         <script src="js/angular-route/angular-route.min.js"></script>

@@ -137,9 +137,11 @@ body > .content {
     display: block;
 }
 
-#adFooter {
+.adspace {
+	/*
 	position: absolute;
 	bottom: 0px;
   	text-align: center;
   	width: 100%;	
+  	*/
 }

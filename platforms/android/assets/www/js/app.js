@@ -14,6 +14,9 @@ hindiTipsApp.config(['$routeProvider',
 	    }).when('/article/:cat/:id/:index', {
 	        templateUrl : 'partials/article.html',
 	        controller : 'ArticleCtrl'
+     	}).when('/article/:id', {
+        	templateUrl : 'partials/article.html',
+        	controller : 'ArticleDirectCtrl'
 	    }).otherwise({
 			redirectTo : '/home'
 		});

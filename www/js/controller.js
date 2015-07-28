@@ -80,7 +80,7 @@ hindiTipsControllers.controller('ArticleCtrl', ['$scope', '$routeParams', 'Artic
 			console.log('JSON is empty. Display Error');
 			//FIXME - Display Error Message
 		} else {
-			console.log("Article : " + JSON.stringify(article));
+			//console.log("Article : " + JSON.stringify(article));
 			//article.contentHtml = $sce.trustAsHtml(tip.content);
 			$scope.article = article;
 			//$interval(showInterstitial, 5000);
@@ -112,3 +112,24 @@ hindiTipsControllers.controller('ArticleCtrl', ['$scope', '$routeParams', 'Artic
 	$scope.displaySelectedArticle();
 
 }]);	
+
+
+//Controller to take directly to tip
+hindiTipsControllers.controller('ArticleDirectCtrl', ['$scope', '$routeParams', '$http', '$location',  '$interval',
+	function($scope, $routeParams, $http, $location, $interval) {
+		$scope.loadTip = function () {       
+			$http.get('http://hindi.tips2stayhealthy.com/?json=y&id=' + $routeParams.id).
+				success(function(data) {
+	    	    	if (!angular.isUndefined(data.articles) && data.articles.length > 0) {
+	            		$scope.article = data.articles[0];
+	            		$interval(showInterstitial, 5000);
+	            	} else {
+	            		$location.path('/home');  
+	            	}
+	    	})
+	}	
+
+	//Collecting the details of the tip
+	$scope.loadTip();
+	
+}]);
