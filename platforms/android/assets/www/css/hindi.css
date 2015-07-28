@@ -136,3 +136,10 @@ body > .content {
     margin-bottom: 20px;
     display: block;
 }
+
+#adFooter {
+	position: absolute;
+	bottom: 0px;
+  	text-align: center;
+  	width: 100%;	
+}
