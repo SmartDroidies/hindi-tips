@@ -261,3 +261,10 @@ body > .content {
 	padding: 10px 0px 0px 60px;	
 }
 
+.share {
+	position : absolute;
+	right : 2px;
+	top : 5px;
+	height: 40px;
+  	width: 45px;	
+}

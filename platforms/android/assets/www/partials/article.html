@@ -8,6 +8,7 @@
         	 <h2 id="main-title" class="main-title-tips" ng-if="article.position">{{ category.code | translate }} {{article.position}} of {{article.size}}</h2> 
         	 <h2 id="main-title" class="main-title-tips" ng-if="article.position == 'undefined'">{{ category.code | translate }} </h2> 
         </div>
+        <img id="img-share" alt="Share" class="share" src="images/share.png" ng-click="share($event, article)"/>
       </div>
     </nav>
 

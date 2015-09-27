@@ -110,12 +110,9 @@ hindiTipsControllers.controller('ArticleCtrl', ['$scope', '$routeParams', 'Artic
 		$scope.displayArticleDetail();
 	};
 
-	/*
-	$scope.share = function ($event, tip) {         
-		//console.log('Gesture ' + $event.type + ' - tip ' + JSON.stringify(tip));
-		window.plugins.socialsharing.share('\n Download Tamil Kuripugal App https://play.google.com/store/apps/details?id=com.smart.droid.tamil.tips', tip.title + ' Read More - ' + tip.link)
+	$scope.share = function ($event, article) {         
+		window.plugins.socialsharing.share('\n Download Hindi Tips App https://play.google.com/store/apps/details?id=com.smart.droidies.hindi.tips', article.title + ' Read More - ' + article.link)
 	};
-	*/
 
 	//Loading the Article
 	$scope.displaySelectedArticle();
