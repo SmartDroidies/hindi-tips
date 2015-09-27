@@ -1,12 +1,26 @@
-<div class="articles">
-	<div class="list-group article-list-item" ng-repeat="article in articles">
-		<a href="#/article/{{categoryId}}/{{article.id}}/{{$index}}" class="list-group-item">
-			<div class="article-listitem-content">
-				<h4 class="list-group-item-heading"><span ng-bind-html="article.title"></span></h4>
-			</div>	
-			<div class="article-listitem-icon">	
-				<p ng-bind-html="article.content | feedicon" class="list-group-item-text" ></p>
-			</div>	
-		</a>
-	</div>	
-</div>
+<div class="main">
+
+	<!-- Header -->
+    <nav class="navbar navbar-fixed-top navbar-header col-xs-12" role="navigation">
+      <div class="navbar-header main-header col-xs-12">
+        <img id="menu-cntrl" class="menu-control" src="images/back.png" onclick="history.back();"/>
+        <div class="head_section col-xs-12">
+          <h2 id="main-title" class="main-title-tips">{{ category.code | translate }}</h2>
+        </div>
+      </div>
+    </nav>
+
+	<div class="articles">
+		<div class="list-group article-list-item" ng-repeat="article in articles">
+			<a href="#/article/{{categoryId}}/{{article.id}}/{{$index}}" class="list-group-item">
+				<div class="article-listitem-content">
+					<h4 class="list-group-item-heading"><span ng-bind-html="article.title"></span></h4>
+				</div>	
+				<div class="article-listitem-icon">	
+					<p ng-bind-html="article.content | feedicon" class="list-group-item-text" ></p>
+				</div>	
+			</a>
+		</div>	
+	</div>
+
+</div>	

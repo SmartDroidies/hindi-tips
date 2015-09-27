@@ -5,8 +5,8 @@
 var hindiTipsControllers = angular.module('hindiTipsControllers', []);
 
 
-hindiTipsControllers.controller('HomeCtrl', ['$scope', '$http', 'StorageService', 
-  function($scope, $http, storageService) {
+hindiTipsControllers.controller('HomeCtrl', ['$scope', '$http', 'StorageService',  'CategoryService',
+  function($scope, $http, storageService, categoryService) {
 	
 	$scope.displayHome = function () {       
 		console.log('Display Home Screen');
@@ -14,6 +14,19 @@ hindiTipsControllers.controller('HomeCtrl', ['$scope', '$http', 'StorageService'
 		//Sync Local Data
 		storageService.syncDate();
     	//window.plugins.spinnerDialog.hide();
+
+
+    	var promise =  categoryService.collectCategories();
+		promise.then (
+  			function(data) {
+			 	$scope.categories = data.categories;
+			 	//console.log("Data Collected " + JSON.stringify(data));
+  			},
+  			function(error) {
+  				//FIXME - Display Error
+    			console.log('No Categories Found.');
+  			});
+
 	};
 
 	//Show Home
@@ -22,29 +35,27 @@ hindiTipsControllers.controller('HomeCtrl', ['$scope', '$http', 'StorageService'
 );
 
 //Controller To Load Tips
-hindiTipsControllers.controller('ArticlesCtrl', ['$scope', 'ArticleService', '$routeParams',
-  function($scope, articleService, $routeParams) {
+hindiTipsControllers.controller('ArticlesCtrl', ['$scope', 'ArticleService', '$routeParams', 'CategoryService',
+  function($scope, articleService, $routeParams, Category) {
 	$scope.displayArticles = function () {
 		var categoryId = $routeParams.cat;
 		window.plugins.spinnerDialog.show();
 		//console.log("Article Category : " + categoryId);
-		/*
-		var ctgry = Category.collectCategorty(categoryId);
+		var ctgry = Category.collectCategory(categoryId);
 		if(ctgry) {
-			console.log("Category : " + ctgry.ctgryname);
+			//console.log("Category : " + JSON.stringify(ctgry));
 		}
-		*/
 		var articles = articleService.fetchArticlesByCategory(categoryId);
 		if (articles === undefined || articles === null) {
 			console.log('JSON is empty. Display Error');
-			//FIXME - Display Message
 		} else {
 			$scope.articles = articles;
 		}
 		$scope.categoryId = categoryId;
+		$scope.category = ctgry;
 		//UI Changes 
 		//$("#main-title").text(ctgry.ctgryname);
-		//hidePopup();
+		hideMenu();
 		//showBannerAd();
 		window.plugins.spinnerDialog.hide();
 	}
@@ -54,8 +65,8 @@ hindiTipsControllers.controller('ArticlesCtrl', ['$scope', 'ArticleService', '$r
 }]);
 
 //Controller to display Tip Details
-hindiTipsControllers.controller('ArticleCtrl', ['$scope', '$routeParams', 'ArticleService', 
-	function($scope, $routeParams, articleService) {
+hindiTipsControllers.controller('ArticleCtrl', ['$scope', '$routeParams', 'ArticleService',  '$interval', 'CategoryService',
+	function($scope, $routeParams, articleService, $interval, Category) {
 
 	$scope.displaySelectedArticle = function() {
 		var categoryId = $routeParams.cat;
@@ -68,40 +79,38 @@ hindiTipsControllers.controller('ArticleCtrl', ['$scope', '$routeParams', 'Artic
 	//Method to display tip detail
 	$scope.displayArticleDetail = function () {         
 		//console.log("Tip Category : " + $scope.categoryId);
-		//var categoryId = $routeParams.cat;
-		//var index = $routeParams.index;
+		var categoryId = $scope.categoryId;
 		//console.log("Tip Category : " + categoryId);
-		//var ctgry = Category.collectCategorty(categoryId);
-		//if(ctgry) {
-		//	console.log("Category : " + ctgry.ctgryname);
-		//}
+		var ctgry = Category.collectCategory(categoryId);
+		if(ctgry) {
+			//console.log("Category : " + ctgry.code);
+		}
+
 		var article = articleService.collectArticle($scope.categoryId, $scope.index);
 		if (article === undefined || article === null) {
 			console.log('JSON is empty. Display Error');
-			//FIXME - Display Error Message
 		} else {
 			//console.log("Article : " + JSON.stringify(article));
 			//article.contentHtml = $sce.trustAsHtml(tip.content);
 			$scope.article = article;
-			//$interval(showInterstitial, 5000);
+			$interval(showInterstitial, 5000);
 		}
-		//$scope.category = $scope.categoryId;
-		//$scope.size = tip.size;
-		//hidePopup();
-		//hideBannerAd();
+		$scope.category = ctgry;
+		$scope.size = article.size;
 	}
 
-	/*
 	//Older Article  
 	$scope.older = function () {
 		$scope.index = ($scope.index < $scope.size) ? ++$scope.index : $scope.size;
-		$scope.displayTipDetail();
+		$scope.displayArticleDetail();
 	};
 	//Newer Article  
 	$scope.newer = function () {
 		$scope.index = ($scope.index > 0) ? --$scope.index : 0;
-		$scope.displayTipDetail();
+		$scope.displayArticleDetail();
 	};
+
+	/*
 	$scope.share = function ($event, tip) {         
 		//console.log('Gesture ' + $event.type + ' - tip ' + JSON.stringify(tip));
 		window.plugins.socialsharing.share('\n Download Tamil Kuripugal App https://play.google.com/store/apps/details?id=com.smart.droid.tamil.tips', tip.title + ' Read More - ' + tip.link)
@@ -122,7 +131,7 @@ hindiTipsControllers.controller('ArticleDirectCtrl', ['$scope', '$routeParams', 
 				success(function(data) {
 	    	    	if (!angular.isUndefined(data.articles) && data.articles.length > 0) {
 	            		$scope.article = data.articles[0];
-	            		$interval(showInterstitial, 5000);
+	            		$interval(showInterstitial, 3000);
 	            	} else {
 	            		$location.path('/home');  
 	            	}

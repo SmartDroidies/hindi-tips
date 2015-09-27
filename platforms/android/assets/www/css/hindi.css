@@ -13,14 +13,68 @@ html, body {
     
 }
 
-/*
-body > .content, body > .menu, body > .setting {
+.menu, .setting {
   padding: 55px 0 0 0;
 }
-*/
+
+/* Menu Styling */
+#menu  {
+	background: #eef5ef;
+	box-shadow: 5px 5px 5px #94A095;	
+	position: absolute;
+	top: 0px;
+	display : none;
+}
+
+#menu ul li {
+	border-bottom: 1px Solid #C3C4BF;	
+}
+
+#menu ul li  a {
+	font-size: 20px;
+	color: #1F1F1F;	
+	padding-right: 20px;
+}
+
+#menu ul li.nav-header {
+	font-size: 22px;
+	padding: 10px;
+	color: #1F1F1F;	
+	font-weight : bold;
+	background: #ACACAC;
+}
+
+/* Menu Styling */
+#setting  {
+	background: #eef5ef;
+	box-shadow: 5px 5px 5px #94A095;	
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	display : none; 
+}
+
+#setting ul li {
+	border-bottom: 1px Solid #C3C4BF;	
+}
+
+#setting ul li  a {
+	font-size: 20px;
+	color: #1F1F1F;	
+	padding-right: 20px;
+}
+
+#setting ul li.nav-header {
+	font-size: 22px;
+	padding: 10px;
+	color: #1F1F1F;	
+	font-weight : bold;
+	background: #ACACAC;
+}
+
 
 body > .content {
-  padding: 55px 0 0 0;
+  padding: 50px 0 0 0;
 }
 
 body > .content {
@@ -43,46 +97,68 @@ body > .content {
 	text-align: center;	
 }	
 
+.main {
+	padding: 0px;
+    margin: 0px;
+}
+
 /* Category Menu Styling */
 .ctgry {
 	position: relative;
-	margin: 2px;
-	padding: 0px;
-	height : 78px;
+    margin: 2px 5px;
+    padding: 0px;
+    height: 85px;
+    width: calc(100% - 10px);	
 }
 
 .ctgryIcon {
 	position: absolute;
-	width: 60px;
-	height: 60px;
+	width: 70px;
+	height: 70px;
 	margin: 3px;
-}
-
-.right-icon {
-	right : 5px;
 }
 
 .ctgryDesc {
 	min-height : 70px;
+	padding: 0px;
+    margin: 0px;	
+    width: calc(100% - 90px);
 } 
 
 .ctgryDesc h3 {
 	font-size : 24px;
 	font-weight : bold;
-	margin-top: 5px;
-	padding-top: 10px;
 }
 
-.right-content  {
+.ctgry-list {
+	padding: 0px;
+	margin: 0px;
+}
+
+/*
+.ctgry:nth-child(even) {
+	background: #CCC;
+}
+
+.ctgry:nth-child(odd) {
+	background: #FFF;
+}
+*/
+
+.ctgry:nth-child(odd) > img { 
+	right : 5px;
+} 
+
+.ctgry:nth-child(even) > div.ctgryDesc  { 
 	margin-left: 90px;
 	min-height: 60px;
-}
+} 
 
-.left-content  {
+.ctgry:nth-child(odd) > div.ctgryDesc { 
 	margin-right: 90px;
 	min-height: 60px;
 	text-align: right;
-}
+} 
 
 .article-list-item {
 	margin : 3px;
@@ -141,3 +217,47 @@ body > .content {
 	position: absolute;
   	bottom: 0px;	
 }
+
+.navbar-header {
+	background-color: #27811c;	
+	padding: 0px;
+    margin: 0px;	
+}
+
+.menu-control {
+	position: absolute;
+  	left: 5px;
+  	top: 10px;
+  	height: 35px;
+  	width: 40px;	
+}
+
+.setting-control {
+	position : absolute;
+	right : 2px;
+	top : 5px;
+	height: 40px;
+  	width: 45px;	
+}
+
+.head_section {
+	padding: 0px;
+    margin: 0px;
+}
+
+.main-title {
+	color: #FFFFFF;
+    font-size: 24px;	
+	font-weight: bold;	
+	margin: 2px;
+	padding: 10px 0px 0px 5px;
+}
+
+.main-title-tips {
+	color: #FFFFFF;
+    font-size: 20px;	
+	font-weight: bold;	
+	margin: 2px;
+	padding: 10px 0px 0px 60px;	
+}
+

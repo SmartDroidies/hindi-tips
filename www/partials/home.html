@@ -1,44 +1,40 @@
-<div id="home" class="list-group ui-page-active">
-	<a href="#articles/1" class="list-group-item ctgry">
-		<img class="ctgryIcon" src="images/health.png"/>
-		<div class="ctgryDesc right-content">
-			<h3 class="list-group-item-heading">{{"HEALTH" | translate}}</h3>
-			<!--p class="list-group-item-text">Quick and easy health tips to stay active and healthy living</p-->
-		</div>	
-	</a>
-	<a href="#articles/3" class="list-group-item ctgry">
-		<img class="ctgryIcon" src="images/remedies.png"/>
-		<div class="ctgryDesc right-content">
-			<h3 class="list-group-item-heading">{{"REMEDY" | translate}}</h3>
-			<!--p class="list-group-item-text">Exercise, Yoga and weight loss tips for a perfect healthy lifestyle</p-->
-		</div>	
-	</a>
-	<a href="#articles/2" class="list-group-item ctgry">
-		<img class="ctgryIcon" src="images/beauty.png"/>
-		<div class="ctgryDesc right-content">
-			<h3 class="list-group-item-heading">{{"BEAUTY" | translate}}</h3>
-			<!--p class="list-group-item-text">Tips for clean and healthy hair, soft and smooth skin, cool eyes, lovely lips and body</p-->
-		</div>	
-	</a>
-	<a href="#articles/6" class="list-group-item ctgry">
-		<img class="ctgryIcon" src="images/fitness.png"/>
-		<div class="ctgryDesc right-content">
-			<h3 class="list-group-item-heading">{{"FITNESS" | translate}}</h3>
-			<!--p class="list-group-item-text">Home remedies for weight loss, white teeth, natural beauty and various health treatment</p-->
-		</div>	
-	</a>
-	<a href="#articles/4" class="list-group-item ctgry">
-		<img class="ctgryIcon" src="images/general.png"/>
-		<div class="ctgryDesc right-content">
-			<h3 class="list-group-item-heading">{{"COOKING" | translate}}</h3>
-			<!--p class="list-group-item-text">Tips with information that motivates, improves our physical and mental well-being</p-->
-		</div>	
-	</a>
-	<!--a href="#articles/5" class="list-group-item ctgry">
-		<img class="ctgryIcon" src="images/fitness.png"/>
-		<div class="ctgryDesc right-content">
-			<h3 class="list-group-item-heading">{{"HOUSE" | translate}}</h3>
-		</div>	
-	</a-->
-</div>	
+<div id="home" class="main col-xs-12 ui-page-active">
+	<!-- Header -->
+	<nav class="navbar navbar-fixed-top navbar-header col-xs-12" role="navigation">
+	  <div class="navbar-header main-header col-xs-12">
+	    <img id="menu-cntrl" class="menu-control" src="images/menu.png"/>
+	    <div class="head_section col-xs-12">
+	        <h2  id="main-title" class="main-title">Hindi Tips</h2>
+	    </div>
+	    <img id="setting-cntrl" class="setting-control" src="images/setting.png"/>
+	  </div>
+	</nav>
+	<div id="main" class="list-group ui-page-active col-xs-12 ctgry-list">
+		<a ng-repeat="ctgry in categories" href="#articles/{{ctgry.id}}" class="list-group-item ctgry col-xs-12">
+			<img class="ctgryIcon" src="{{ctgry.imageUrl}}" />
+			<div class="ctgryDesc col-xs-12">
+				<h3 class="list-group-item-heading">{{ ctgry.code | translate }}</h3>
+				<p class="list-group-item-text">{{ ctgry.desc | translate }}</p>
+			</div>	
+		</a>
+	</div>
+</div>
+
+<!-- Menu Control -->
+<div id="menu" class="menu">
+	<ul class="nav nav-list">
+		<li ng-repeat="ctgry in categories">
+			<a href="#articles/{{ctgry.id}}" onclick="hideMenu()">{{ ctgry.code | translate }}</a>
+		</li>
+	</ul>
+</div>
+
+<!-- Settings Menu -->
+<div id="setting" class="setting">
+  <ul class="nav nav-list">
+      <li><a href="#share" onclick="shareApp()">Share</a></li>
+      <li><a href="#rate" onclick="rateus()">Rate Me</a></li>
+      <li><a href="#feedback" onclick="feedback()">Feedback</a></li>
+  </ul>
+</div>
 

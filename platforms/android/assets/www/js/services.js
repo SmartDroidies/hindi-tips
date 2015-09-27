@@ -155,21 +155,19 @@ hindiTipsServices.factory ('ArticleService', function (StorageService, _, cacheS
 
 
 //Factory for managing category
-hindiTipsServices.factory ('CategoryService', function (StorageService, _, cacheService, $http, $q) {
+hindiTipsServices.factory ('CategoryService', function (_, cacheService, $http, $q) {
 	var factory = {}; 
 
-/*
 	//Load Categories into Cache
 	factory.loadCategories = function() {
-		console.log('Load Categories From Filesystem');
+		//console.log('Load Categories From Filesystem');
 		return $http.get('files/category.json');
-	};
-
+	}
 
 	//Collect Categories from cache
 	factory.collectCategories = function() {
 		var deferred = $q.defer();
-		var key = 'tp-categories';
+		var key = 'ht-categories';
 		var categories = cacheService.get(key);
 		if(!categories) {
 			var promise = this.loadCategories();
@@ -191,7 +189,19 @@ hindiTipsServices.factory ('CategoryService', function (StorageService, _, cache
 		}
 		return deferred.promise;
 	} 
-*/
-	
+
+	//Collect Category for an ID
+	factory.collectCategory = function(catID) {
+		var key = 'ht-categories';
+		var categories = cacheService.get(key);
+		var category = {};
+		if(categories) {
+			category = _.find(categories, function(ctgry) { 
+				return ctgry.id == catID; 
+			});
+		} 
+		return category;
+	} 
+
     return factory;
 }); 

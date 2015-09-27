@@ -1,11 +1,21 @@
-<div class="article" ng-swipe-left="older({{index}})" ng-swipe-right="newer({{index}})">
-	<input type="hidden" id="sequence" ng-model="article.position"/></input>
-	<input type="hidden" ng-model="article.size"/></input>
-	<h4 id="article-title" class="article-head"><span ng-bind-html="article.title"></span></h4>
-	<div class="article-content" format-content ng-bind-html="article.content"></div>
-</div>	
-<!--nav id="footer" class="navbar navbar-default navbar-fixed-bottom footer">
-	<div class="position">{{ 'TIP' | translate }} {{tip.position}} of {{tip.size}} </div>
-	<img id="img-share" alt="Share" class="share" src="images/share.png" ng-click="share($event, tip)"/>
-</nav-->
+<div class="main">
 
+	<!-- Header -->
+    <nav class="navbar navbar-fixed-top navbar-header col-xs-12" role="navigation">
+      <div class="navbar-header main-header col-xs-12">
+        <img id="menu-cntrl" class="menu-control" src="images/back.png" onclick="history.back();"/>
+        <div class="head_section col-xs-12">
+        	 <h2 id="main-title" class="main-title-tips" ng-if="article.position">{{ category.code | translate }} {{article.position}} of {{article.size}}</h2> 
+        	 <h2 id="main-title" class="main-title-tips" ng-if="article.position == 'undefined'">{{ category.code | translate }} </h2> 
+        </div>
+      </div>
+    </nav>
+
+	<div class="article" ng-swipe-left="older({{index}})" ng-swipe-right="newer({{index}})">
+		<input type="hidden" id="sequence" ng-model="article.position"/></input>
+		<input type="hidden" ng-model="article.size"/></input>
+		<h4 id="article-title" class="article-head"><span ng-bind-html="article.title"></span></h4>
+		<div class="article-content" format-content ng-bind-html="article.content"></div>
+	</div>	
+
+</div>	
