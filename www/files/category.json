@@ -3,5 +3,5 @@
 	{"code": "REMEDY", "id":	"3", "imageUrl": "images/remedies.png", "order": "2", "desc" : "REMEDY_DESC"},
 	{"code": "BEAUTY", "id":	"2", "imageUrl": "images/beauty.png", "order": "3", "desc" : "BEAUTY_DESC"},
 	{"code": "FITNESS", "id":	"6", "imageUrl": "images/fitness.png", "order": "4", "desc" : "FITNESS_DESC"},
-	{"code": "COOKING", "id":	"4", "imageUrl": "images/general.png", "order": "5", "desc" : "COOKING_DESC"}
+	{"code": "COOKING", "id":	"4", "imageUrl": "images/cooking.png", "order": "5", "desc" : "COOKING_DESC"}
 ]
