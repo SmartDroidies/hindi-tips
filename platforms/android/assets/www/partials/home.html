@@ -11,7 +11,7 @@
 	</nav>
 	<div id="main" class="list-group ui-page-active col-xs-12 ctgry-list">
 		<a ng-repeat="ctgry in categories" href="#articles/{{ctgry.id}}" class="list-group-item ctgry col-xs-12">
-			<img class="ctgryIcon" src="{{ctgry.imageUrl}}" />
+			<img class="ctgryIcon" ng-src="{{ctgry.imageUrl}}" />
 			<div class="ctgryDesc col-xs-12">
 				<h3 class="list-group-item-heading">{{ ctgry.code | translate }}</h3>
 				<p class="list-group-item-text">{{ ctgry.desc | translate }}</p>
