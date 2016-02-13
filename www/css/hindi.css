@@ -107,14 +107,14 @@ body > .content {
 	position: relative;
     margin: 2px 5px;
     padding: 0px;
-    height: 85px;
+    height: 73px;
     width: calc(100% - 10px);	
 }
 
 .ctgryIcon {
 	position: absolute;
-	width: 70px;
-	height: 70px;
+	width: 60px;
+	height: 60px;
 	margin: 3px;
 }
 
@@ -188,7 +188,7 @@ body > .content {
 }
 
 .list-group-item {
-  padding : 5px;
+  padding : 2px;
 }
 
 .article, .articles {
