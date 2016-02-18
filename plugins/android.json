@@ -139,9 +139,6 @@
         "com.admob.plugin": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
-        },
         "org.apache.cordova.inappbrowser": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
@@ -149,6 +146,9 @@
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
+        },
+        "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         }
     },

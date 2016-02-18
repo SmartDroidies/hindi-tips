@@ -29,10 +29,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
                             "count": 1
                         },
@@ -42,6 +38,10 @@
                         },
                         {
                             "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -139,9 +139,6 @@
         "com.admob.plugin": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
-        },
         "org.apache.cordova.inappbrowser": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
@@ -149,6 +146,9 @@
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
+        },
+        "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         }
     },
@@ -193,14 +193,6 @@
             ]
         },
         {
-            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
-            "id": "cordova-plugin-x-socialsharing.SocialSharing",
-            "pluginId": "cordova-plugin-x-socialsharing",
-            "clobbers": [
-                "window.plugins.socialsharing"
-            ]
-        },
-        {
             "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
             "id": "org.apache.cordova.inappbrowser.inappbrowser",
             "pluginId": "org.apache.cordova.inappbrowser",
@@ -231,6 +223,13 @@
             "pluginId": "org.apache.cordova.dialogs",
             "merges": [
                 "navigator.notification"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+            "id": "cordova-plugin-x-socialsharing.SocialSharing",
+            "clobbers": [
+                "window.plugins.socialsharing"
             ]
         }
     ],

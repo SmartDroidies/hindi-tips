@@ -39,14 +39,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
-        "id": "cordova-plugin-x-socialsharing.SocialSharing",
-        "pluginId": "cordova-plugin-x-socialsharing",
-        "clobbers": [
-            "window.plugins.socialsharing"
-        ]
-    },
-    {
         "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
         "id": "org.apache.cordova.inappbrowser.inappbrowser",
         "pluginId": "org.apache.cordova.inappbrowser",
@@ -78,20 +70,17 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "id": "cordova-plugin-x-socialsharing.SocialSharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
-{
-    "com.phonegap.plugins.PushPlugin": "2.5.0",
-    "cordova-plugin-whitelist": "1.0.0",
-    "hu.dpal.phonegap.plugins.SpinnerDialog": "1.3.1",
-    "org.apache.cordova.device": "0.3.0",
-    "com.admob.plugin": "5.0.4",
-    "cordova-plugin-x-socialsharing": "5.0.2",
-    "org.apache.cordova.inappbrowser": "0.6.0",
-    "de.appplant.cordova.plugin.email-composer": "0.8.2",
-    "org.apache.cordova.dialogs": "0.3.0"
-}
+{}
 // BOTTOM OF METADATA
 });
