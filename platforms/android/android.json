@@ -9,10 +9,6 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"PushPlugin\"><param name=\"android-package\" value=\"com.plugin.gcm.PushPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
@@ -22,10 +18,6 @@
                         },
                         {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"AdmobPlugin\"><param name=\"android-package\" value=\"com.admob.cordova.plugin.AdmobAdPlugin\" /></feature>",
                             "count": 1
                         },
                         {
@@ -42,6 +34,14 @@
                         },
                         {
                             "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"GCMPush\"><param name=\"android-package\" value=\"com.smart.droid.gcm.GCMPush\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -81,41 +81,41 @@
                     ],
                     "/manifest/application": [
                         {
-                            "xml": "<activity android:exported=\"true\" android:name=\"com.plugin.gcm.PushHandlerActivity\" />",
+                            "xml": "<activity android:exported=\"true\" android:name=\"com.smart.droid.gcm.GCMActivity\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<receiver android:name=\"com.plugin.gcm.CordovaGCMBroadcastReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><action android:name=\"com.google.android.c2dm.intent.REGISTRATION\" /><category android:name=\"com.smart.droidies.hindi.tips\" /></intent-filter></receiver>",
+                            "xml": "<receiver android:name=\"com.google.android.gms.gcm.GcmReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><action android:name=\"com.google.android.c2dm.intent.REGISTRATION\" /><category android:name=\"com.smart.droidies.hindi.tips\" /></intent-filter></receiver>",
                             "count": 1
                         },
                         {
-                            "xml": "<service android:name=\"com.plugin.gcm.GCMIntentService\" />",
+                            "xml": "<service android:name=\"com.smart.droid.gcm.ListenerService\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /></intent-filter></service>",
                             "count": 1
                         },
                         {
-                            "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"7327000\" />",
+                            "xml": "<service android:name=\"com.smart.droid.gcm.GCMInstanceIDListenerService\"><intent-filter><action android:name=\"com.google.android.gms.iid.InstanceID\" /></intent-filter></service>",
                             "count": 1
                         },
                         {
-                            "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" />",
+                            "xml": "<service android:exported=\"false\" android:name=\"com.smart.droid.gcm.RegistrationIntentService\"></service>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
                             "count": 1
                         }
                     ],
                     "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
                             "count": 1
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
                         }
                     ]
@@ -124,9 +124,6 @@
         }
     },
     "installed_plugins": {
-        "com.phonegap.plugins.PushPlugin": {
-            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
-        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
@@ -134,9 +131,6 @@
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
-        },
-        "com.admob.plugin": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
         "org.apache.cordova.inappbrowser": {
@@ -150,18 +144,19 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
+        },
+        "cordova-plugin-gcmpush": {
+            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
+        },
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
+        },
+        "cordova-plugin-admobpro": {
+            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         }
     },
     "dependent_plugins": {},
     "modules": [
-        {
-            "file": "plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js",
-            "id": "com.phonegap.plugins.PushPlugin.PushNotification",
-            "pluginId": "com.phonegap.plugins.PushPlugin",
-            "clobbers": [
-                "PushNotification"
-            ]
-        },
         {
             "file": "plugins/cordova-plugin-whitelist/whitelist.js",
             "id": "cordova-plugin-whitelist.whitelist",
@@ -182,14 +177,6 @@
             "pluginId": "org.apache.cordova.device",
             "clobbers": [
                 "device"
-            ]
-        },
-        {
-            "file": "plugins/com.admob.plugin/www/AdmobPlugin.js",
-            "id": "com.admob.plugin.AdmobAd",
-            "pluginId": "com.admob.plugin",
-            "clobbers": [
-                "window.admob"
             ]
         },
         {
@@ -230,6 +217,20 @@
             "id": "cordova-plugin-x-socialsharing.SocialSharing",
             "clobbers": [
                 "window.plugins.socialsharing"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-gcmpush/www/gcm.js",
+            "id": "cordova-plugin-gcmpush.GCMPush",
+            "clobbers": [
+                "GCMPush"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+            "id": "cordova-plugin-admobpro.AdMob",
+            "clobbers": [
+                "window.AdMob"
             ]
         }
     ],

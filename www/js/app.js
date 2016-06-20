@@ -1,7 +1,7 @@
 'use strict';
 /* App Module */
 
-var hindiTipsApp = angular.module('hindiTipsApp', ['ngRoute', 'ngSanitize', 'ngTouch', 'pascalprecht.translate', 'underscore', 'hindiTipsControllers', 'hindiTipsServices', 'hindiTipsFilters', 'underscore', 'cacheService', 'hmTouchEvents']); 
+var hindiTipsApp = angular.module('hindiTipsApp', ['ngRoute', 'ngSanitize', 'ngTouch', 'pascalprecht.translate', 'underscore', 'hindiTipsControllers', 'hindiTipsServices', 'hindiTipsFilters', 'underscore', 'cacheService']); 
 
 hindiTipsApp.config(['$routeProvider', 
 	function ($routeProvider) {

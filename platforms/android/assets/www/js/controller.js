@@ -78,6 +78,7 @@ hindiTipsControllers.controller('ArticleCtrl', ['$scope', '$routeParams', 'Artic
 
 	//Method to display tip detail
 	$scope.displayArticleDetail = function () {         
+		showInterstitial();
 		//console.log("Tip Category : " + $scope.categoryId);
 		var categoryId = $scope.categoryId;
 		//console.log("Tip Category : " + categoryId);
@@ -93,7 +94,6 @@ hindiTipsControllers.controller('ArticleCtrl', ['$scope', '$routeParams', 'Artic
 			//console.log("Article : " + JSON.stringify(article));
 			//article.contentHtml = $sce.trustAsHtml(tip.content);
 			$scope.article = article;
-			$interval(showInterstitial, 5000);
 		}
 		$scope.category = ctgry;
 		$scope.size = article.size;
@@ -128,7 +128,6 @@ hindiTipsControllers.controller('ArticleDirectCtrl', ['$scope', '$routeParams', 
 				success(function(data) {
 	    	    	if (!angular.isUndefined(data.articles) && data.articles.length > 0) {
 	            		$scope.article = data.articles[0];
-	            		$interval(showInterstitial, 3000);
 	            	} else {
 	            		$location.path('/home');  
 	            	}

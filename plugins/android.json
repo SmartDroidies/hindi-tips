@@ -124,9 +124,6 @@
         }
     },
     "installed_plugins": {
-        "com.phonegap.plugins.PushPlugin": {
-            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
-        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
@@ -134,9 +131,6 @@
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
-        },
-        "com.admob.plugin": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         },
         "org.apache.cordova.inappbrowser": {
@@ -150,7 +144,17 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
+        },
+        "cordova-plugin-gcmpush": {
+            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
+        },
+        "cordova-plugin-admobpro": {
+            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.smart.droidies.hindi.tips"
+        }
+    }
 }

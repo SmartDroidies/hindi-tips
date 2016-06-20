@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "541588285718",
+    "firebase_url": "https://admob-app-id-9622132059.firebaseio.com",
+    "project_id": "admob-app-id-9622132059",
+    "storage_bucket": "admob-app-id-9622132059.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541588285718:android:6cd5379695735f95",
+        "android_client_info": {
+          "package_name": "com.smart.droidies.hindi.tips"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541588285718-g877r17m4kps7i8mab56ac9u4rm5ni0n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi73kqHOe-JNh3zTg5-uB3O_XH9r0DmD8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
